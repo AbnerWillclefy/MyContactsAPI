@@ -2,9 +2,9 @@ const db = require('../../database');
 
 class CategoriesRepository {
   async findAll() {
-    const [row] = await db.query('SELECT * FROM categories ORDER BY name');
+    const rows = await db.query('SELECT * FROM categories ORDER BY name');
 
-    return row;
+    return rows;
   }
 
   async create({ name }) {
